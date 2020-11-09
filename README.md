@@ -22,7 +22,8 @@ The widget script exports a module called `swish_widget_app`. You will need to i
 ```js
 swish_widget_app.init({
   mountOn: "my_widget",
-  apiKey: "apikeyTest"
+  apiKey: "apikeyTest",
+  appDownloadUrl: "https://www.nbn23.com/es/swish-promo/"
 });
 ```
 
