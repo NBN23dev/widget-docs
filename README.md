@@ -2,9 +2,9 @@
 
 This repository describes how to embed the NBN23 Widget in your website.
 
-## Documentation
+## Immplementation
 
-### Load the widget script
+### 1. Load the widget script
 
 You'll need to load this script in your website:
 
@@ -12,20 +12,24 @@ You'll need to load this script in your website:
 
 The way to do this varies depending on how you website works. This are a few possible scenarios:
 
-- Load the script the standard way by adding `<script src="//widget.nbn23.com/widget-react.js.gz" type="text/javascript"></script>`
-- If you use WordPress or other CMS, you'll need to enqueue the script to your pages (or to a specific page within your website). For example, in WordPress you would do this: `wp_enqueue_script( 'widget-script', '//widget.nbn23.com/widget-react.js.gz' );`
+- Load the script the standard way by adding `<script src="//widget.nbn23.com/widget-react.js.gz" type="text/javascript"></script>` at the `<Head />` of your website.
+- If you use WordPress or other CMS, you'll need to enqueue the script to your pages (or to a specific page within your website). For example, in WordPress you would do this: `wp_enqueue_script( 'widget-script', '//widget.nbn23.com/widget-react.js.gz' );` inside the `functions.php` file of your theme.
 
-### Initialize the script
+### 2. Initialize the script
 
 The widget script exports a module called `swish_widget_app`. You will need to initialize the widget at the end of the `<Body />`, using the `init` method:
 
-```js
-swish_widget_app.init({
-  mountOn: "my_widget",
-  apiKey: "apikeyTest",
-  appDownloadUrl: "https://www.nbn23.com/es/swish-promo/",
-});
+```html
+<script>
+  swish_widget_app.init({
+    mountOn: "my_widget",
+    apiKey: "apikeyTest",
+    appDownloadUrl: "https://www.nbn23.com/es/swish-promo/",
+  });
+</script>
 ```
+
+The configuration value that you should pay attention is `mountOn`, this value should be the `id` of the HTML node (div, span, p, etc.) you want the widget to be displayed.
 
 After initializing the widget, it will render in the DOM node specified in the `mountOn` property. If that property is missing, the widget will try to render in a node with an ID `root`.
 
@@ -73,7 +77,7 @@ An example of how it would look on a simple HTML Page
 
 ## Common problems
 
-"This widget mount node hasn't been found. Check that the mountOn parameter in the configuration is correct or that you have a `"root"` node"
+"This widget mount node hasn't been found. Check that the `mountOn` parameter in the configuration is correct or that you have a `"root"` node"
 
 > The problem occurs when the widget is initialized and cannot find the HTML node specified in the `"mountOn"` field. This parameter is used to tell the widget where it should be mounted, and it should be the "id" of that HTML node (div, span, p, etc.). The cause of the problem can be two reasons:
 >
