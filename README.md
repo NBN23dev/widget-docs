@@ -13,7 +13,7 @@ You'll need to load this script in your website:
 The way to do this varies depending on how you website works. This are a few possible scenarios:
 
 - Load the script the standard way by adding `<script src="//widget.nbn23.com/widget-react.js.gz" type="text/javascript"></script>` at the `<Head />` of your website.
-- If you use WordPress or other CMS, you'll need to enqueue the script to your pages (or to a specific page within your website). For example, in WordPress you would do this: `wp_enqueue_script( 'widget-script', '//widget.nbn23.com/widget-react.js.gz' );` inside the `functions.php` file of your theme.
+- If you use WordPress or other CMS, you'll need to enqueue the script to your pages (or to a specific page within your website). For example, in WordPress you would do this: `wp_enqueue_script( 'widget-script', 'https://widget.nbn23.com/widget-react.js.gz' );` inside the `functions.php` file of your theme.
 
 ### 2. Initialize the script
 
