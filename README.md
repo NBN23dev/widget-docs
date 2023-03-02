@@ -24,7 +24,6 @@ The widget script exports a module called `swish_widget_app`. You will need to i
   swish_widget_app.init({
     mountOn: "my_widget",
     apiKey: "apikeyTest",
-    appDownloadUrl: "https://www.nbn23.com/es/swish-promo/",
   });
 </script>
 ```
@@ -42,7 +41,6 @@ You will also need an `apiKey` provided by NBN23, which will be used to identify
 | mountOn         | string  | The "id" of the HTML node where the widget will be rendered. Defaults to 'root'                      |
 | theme           | string  | If we have added a custom theme for your organization, we'll provide this value to you               |
 | apiKey          | string  | Mandatory api key to query our servers                                                               |
-| appDownloadUrl  | string  | If specified, rows in the calendar view will be clickable and will open this URL                     |
 | hideCalendar    | Boolean | Hides the Calendar view                                                                              |
 | hideStandings   | Boolean | Hides the Standings view                                                                             |
 | backgroundColor | string  | By default, the widget background is transparent. You can change it by setting a hex color code here |
@@ -68,7 +66,6 @@ An example of how it would look on a simple HTML Page
         mountOn: "my_widget",
         apiKey: "myApiKey",
         theme: "black",
-        appDownloadUrl: "https://www.nbn23.com/es/swish-promo/",
       });
     </script>
   </body>
